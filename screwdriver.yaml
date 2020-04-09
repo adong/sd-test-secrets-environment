@@ -1,0 +1,12 @@
+shared:
+    image: node:12
+    environment:
+        THIS_TOKEN: default token
+# https://github.com/screwdriver-cd/launcher/blob/e62e58eddf1897804a677c0e0d658fd686bd7c1d/launch.go#L473-L492
+jobs:
+    main:
+        requires: [~pr, ~commit]
+        steps:
+            - step1: echo $THIS_TOKEN
+        secrets:
+            - THIS_TOKEN

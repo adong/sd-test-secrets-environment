@@ -10,3 +10,7 @@ jobs:
             - step1: echo $THIS_TOKEN
         secrets:
             - THIS_TOKEN
+    secondary:
+        requires: [~pr, ~commit]
+        steps:
+            - step1: echo 'hello world'
